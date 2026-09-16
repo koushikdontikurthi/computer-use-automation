@@ -1,0 +1,7 @@
+{"ts": "2026-09-16T03:57:48.138177+00:00", "event": "replay_started", "payload": {"capability_id": "f4f4f0a5-84e8-4d0d-9103-b432dd4e6a9b", "version": 1, "inputs": {"member_id": "12345"}}}
+{"ts": "2026-09-16T03:57:48.231373+00:00", "event": "replay_business_outcome", "payload": {"step_id": "step-01", "code": "PERMISSION_DENIED", "message": "The current operator is not permitted"}}
+{"ts": "2026-09-16T04:00:04.857981+00:00", "event": "replay_started", "payload": {"capability_id": "f4f4f0a5-84e8-4d0d-9103-b432dd4e6a9b", "version": 1, "inputs": {"member_id": "12345"}}}
+{"ts": "2026-09-16T04:00:05.019781+00:00", "event": "replay_step_ok", "payload": {"step_id": "step-01", "action": "type", "attempt": 1}}
+{"ts": "2026-09-16T04:00:05.140446+00:00", "event": "replay_step_ok", "payload": {"step_id": "step-02", "action": "click", "attempt": 1}}
+{"ts": "2026-09-16T04:00:05.168870+00:00", "event": "replay_step_ok", "payload": {"step_id": "step-03", "action": "read", "attempt": 1}}
+{"ts": "2026-09-16T04:00:05.171686+00:00", "event": "replay_completed", "payload": {"outputs": {"savings_balance": "$6,430.21"}}}

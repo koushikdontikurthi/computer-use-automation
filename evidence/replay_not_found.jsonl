@@ -1,0 +1,6 @@
+{"ts": "2026-09-16T03:57:59.266672+00:00", "event": "replay_started", "payload": {"capability_id": "f4f4f0a5-84e8-4d0d-9103-b432dd4e6a9b", "version": 1, "inputs": {"member_id": "99999"}}}
+{"ts": "2026-09-16T03:57:59.387953+00:00", "event": "replay_business_outcome", "payload": {"step_id": "step-01", "code": "PERMISSION_DENIED", "message": "The current operator is not permitted"}}
+{"ts": "2026-09-16T04:00:14.974250+00:00", "event": "replay_started", "payload": {"capability_id": "f4f4f0a5-84e8-4d0d-9103-b432dd4e6a9b", "version": 1, "inputs": {"member_id": "99999"}}}
+{"ts": "2026-09-16T04:00:15.100954+00:00", "event": "replay_step_ok", "payload": {"step_id": "step-01", "action": "type", "attempt": 1}}
+{"ts": "2026-09-16T04:00:15.356038+00:00", "event": "replay_step_ok", "payload": {"step_id": "step-02", "action": "click", "attempt": 1}}
+{"ts": "2026-09-16T04:00:15.382732+00:00", "event": "replay_business_outcome", "payload": {"step_id": "step-02", "code": "MEMBER_NOT_FOUND", "message": "The requested member does not exist"}}

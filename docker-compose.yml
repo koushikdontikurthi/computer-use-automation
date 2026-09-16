@@ -1,0 +1,11 @@
+services:
+  legacy-app:
+    build: .
+    command: python -m app.legacy_app.app
+    ports:
+      - "8001:8001"
+  operator-api:
+    build: .
+    command: python -m app.handoff.demo_server
+    ports:
+      - "8765:8765"

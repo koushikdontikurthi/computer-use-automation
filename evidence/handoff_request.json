@@ -1,0 +1,9 @@
+{
+  "intervention_id": "94bee80f-d3e6-4eff-941a-f1d93913b6c4",
+  "goal": "Look up member 12345 and read the current savings balance",
+  "step": 18,
+  "url": "http://127.0.0.1:8001/search",
+  "reason": "action failed: Locator.inner_text: Timeout 10000ms exceeded.\nCall log:\n  - waiting for get_by_text(\"Savings\\tCurrent savings balance: $6,430.21\").first\n",
+  "screenshot": "evidence/handoff-request.png",
+  "operator_url": "http://127.0.0.1:8765/operator"
+}

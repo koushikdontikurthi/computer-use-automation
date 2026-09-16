@@ -1,0 +1,9 @@
+<!doctype html>
+<html><head><title>Legacy CU - Member Service</title>
+<style>body{font-family:Tahoma,Arial;background:#e6e6e6;margin:0}.top{background:#15385f;color:#fff;padding:10px 18px;font-weight:bold}.box{width:760px;margin:28px auto;background:#fff;border:1px solid #777;padding:18px}table{border-collapse:collapse;width:100%}td{padding:8px;border:1px solid #bbb}.label{width:180px;background:#efefef}.error{background:#ffe8e8;border:1px solid #a33;padding:10px;margin:10px 0}</style>
+</head><body><div class="top">Community Federal - Back Office Member Service v7.4</div>
+<div class="box"><h2>Member Lookup</h2>
+{% if error %}<div class="error">{{ error }}</div>{% endif %}
+<form method="post" action="/search"><table><tr><td class="label"><label for="mbr">Member Number</label></td><td><input id="mbr" name="member" autocomplete="off"></td></tr><tr><td colspan="2"><button type="submit">Search Member</button></td></tr></table></form>
+<p style="font-size:12px;color:#555">Demo records: 12345 and 24680. Use 99999 for not-found, 00000 for permission denied.</p>
+</div></body></html>

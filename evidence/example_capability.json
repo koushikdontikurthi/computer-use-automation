@@ -1,0 +1,114 @@
+{
+  "schema_version": "1.0",
+  "capability_id": "6fbe1a21-6a91-4d06-9b9f-c6cc7e4d1022",
+  "name": "lookup-member-savings-balance",
+  "description": "Look up a member by member number and return the current savings balance.",
+  "app_family": "legacy-bank-demo",
+  "artifact_version": 1,
+  "created_at": "2026-09-09T12:00:00+00:00",
+  "target_entrypoint": "http://127.0.0.1:8001",
+  "inputs": [
+    {
+      "name": "member_id",
+      "type": "string",
+      "required": true,
+      "description": "Credit union member number"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "savings_balance",
+      "type": "string",
+      "description": "Current savings balance as displayed by the target app"
+    }
+  ],
+  "steps": [
+    {
+      "id": "step-01",
+      "action": "type",
+      "locator_candidates": [
+        {
+          "strategy": "label",
+          "value": "Member Number",
+          "role": null,
+          "exact": false
+        },
+        {
+          "strategy": "role",
+          "value": "Member Number",
+          "role": "textbox",
+          "exact": false
+        },
+        {
+          "strategy": "css",
+          "value": "input[name=\"member\"]",
+          "role": null,
+          "exact": false
+        }
+      ],
+      "value": "{{member_id}}",
+      "output_name": null,
+      "retry_count": 1,
+      "timeout_ms": 10000,
+      "reversible": true
+    },
+    {
+      "id": "step-02",
+      "action": "click",
+      "locator_candidates": [
+        {
+          "strategy": "role",
+          "value": "Search Member",
+          "role": "button",
+          "exact": false
+        },
+        {
+          "strategy": "text",
+          "value": "Search Member",
+          "role": null,
+          "exact": true
+        },
+        {
+          "strategy": "css",
+          "value": "button[type=\"submit\"]",
+          "role": null,
+          "exact": false
+        }
+      ],
+      "value": null,
+      "output_name": null,
+      "retry_count": 1,
+      "timeout_ms": 10000,
+      "reversible": true
+    },
+    {
+      "id": "step-03",
+      "action": "read",
+      "locator_candidates": [
+        {
+          "strategy": "css",
+          "value": "table:nth-of-type(2) tr:nth-of-type(2) strong",
+          "role": null,
+          "exact": false
+        },
+        {
+          "strategy": "css",
+          "value": "strong",
+          "role": null,
+          "exact": false
+        }
+      ],
+      "value": null,
+      "output_name": "savings_balance",
+      "retry_count": 1,
+      "timeout_ms": 10000,
+      "reversible": true
+    }
+  ],
+  "success_condition": {
+    "kind": "output_present",
+    "value": "savings_balance"
+  },
+  "tenant_overrides": {},
+  "approved": true
+}

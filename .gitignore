@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+artifacts/
+.evidence_tmp/
+playwright-report/
+test-results/
+.DS_Store

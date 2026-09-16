@@ -1,0 +1,108 @@
+{
+  "schema_version": "1.0",
+  "capability_id": "f4f4f0a5-84e8-4d0d-9103-b432dd4e6a9b",
+  "name": "look-up-member-12345-and-read-the-current-saving",
+  "description": "Look up member 12345 and read the current savings balance",
+  "app_family": "legacy-bank-demo",
+  "artifact_version": 1,
+  "created_at": "2026-09-16T03:56:43.624379+00:00",
+  "target_entrypoint": "http://127.0.0.1:8001",
+  "inputs": [
+    {
+      "name": "member_id",
+      "type": "string",
+      "required": true,
+      "description": "Runtime parameter: member_id"
+    }
+  ],
+  "outputs": [
+    {
+      "name": "savings_balance",
+      "type": "string",
+      "description": "Extracted value: savings_balance"
+    }
+  ],
+  "steps": [
+    {
+      "id": "step-01",
+      "action": "type",
+      "locator_candidates": [
+        {
+          "strategy": "role",
+          "value": "Member Number",
+          "role": "textbox",
+          "exact": false
+        },
+        {
+          "strategy": "text",
+          "value": "Member Number",
+          "role": null,
+          "exact": false
+        },
+        {
+          "strategy": "css",
+          "value": "#mbr",
+          "role": null,
+          "exact": false
+        }
+      ],
+      "value": "{{member_id}}",
+      "output_name": null,
+      "retry_count": 1,
+      "timeout_ms": 10000,
+      "reversible": true
+    },
+    {
+      "id": "step-02",
+      "action": "click",
+      "locator_candidates": [
+        {
+          "strategy": "role",
+          "value": "Search Member",
+          "role": "button",
+          "exact": false
+        },
+        {
+          "strategy": "text",
+          "value": "Search Member",
+          "role": null,
+          "exact": false
+        },
+        {
+          "strategy": "css",
+          "value": "button",
+          "role": null,
+          "exact": false
+        }
+      ],
+      "value": null,
+      "output_name": null,
+      "retry_count": 1,
+      "timeout_ms": 10000,
+      "reversible": true
+    },
+    {
+      "id": "step-03",
+      "action": "read",
+      "locator_candidates": [
+        {
+          "strategy": "text",
+          "value": "$6,430.21",
+          "role": null,
+          "exact": true
+        }
+      ],
+      "value": null,
+      "output_name": "savings_balance",
+      "retry_count": 1,
+      "timeout_ms": 10000,
+      "reversible": true
+    }
+  ],
+  "success_condition": {
+    "kind": "url_contains",
+    "value": "http://127.0.0.1:8001/search"
+  },
+  "tenant_overrides": {},
+  "approved": false
+}
